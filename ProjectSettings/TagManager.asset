@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Desk
+    uniqueID: 3680296201
+    locked: 0
+  - name: Tray
+    uniqueID: 2066425353
+    locked: 0
+  - name: Draggable
+    uniqueID: 1161931097
+    locked: 0
