@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     private static readonly float _windowWidth = 19.20f;
     private static readonly float _windowHeight = 10.80f;
     private static readonly float _keyPanSpeed = 20f;
-    private static readonly float _mousePanSpeed = 1.5f;
+    private static readonly float _mousePanSpeed = 1f;
     private static readonly float _cameraZPosition = -10f;
     private static readonly float _zoomedInSize = 5f;
     private static readonly float _zoomedOutSize = 15f;
