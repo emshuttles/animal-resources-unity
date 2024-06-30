@@ -171,6 +171,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cb3316e255569a94982e3b11c99ed181, type: 3}
   - {fileID: 8300000, guid: d49f0c5708795054a82574d90e4e589e, type: 3}
   - {fileID: 8300000, guid: 3739535ca37806040b8a8ded56ad7cf8, type: 3}
+  _jobRequestPrefab: {fileID: 6727604250228801662, guid: 559cc7eb4f7a7f94d804f56aceb482e5, type: 3}
+  _letterSpawn: {fileID: 1333712541}
+  _reprimandPrefab: {fileID: 2977535428546453360, guid: 2e7e3a2109ab53140970759a583280a5, type: 3}
 --- !u!1 &1195709973
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +453,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1333712540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333712541}
+  m_Layer: 0
+  m_Name: LetterSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1333712541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333712540}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -797,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3467273559266291674, guid: b0a32824d4504fa4cbc76d0adf1516fd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -450
+      value: -350
       objectReference: {fileID: 0}
     - target: {fileID: 3467273559266291674, guid: b0a32824d4504fa4cbc76d0adf1516fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -815,9 +849,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndDayButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4888407636415991023, guid: b0a32824d4504fa4cbc76d0adf1516fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6765001596979953359, guid: b0a32824d4504fa4cbc76d0adf1516fd, type: 3}
       propertyPath: m_text
       value: End Day
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216083861545733838, guid: b0a32824d4504fa4cbc76d0adf1516fd, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8216083861545733838, guid: b0a32824d4504fa4cbc76d0adf1516fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -851,3 +893,4 @@ SceneRoots:
   - {fileID: 1437151141}
   - {fileID: 1214049705}
   - {fileID: 1407506124}
+  - {fileID: 1333712541}

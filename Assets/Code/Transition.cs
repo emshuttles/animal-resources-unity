@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class Transition : MonoBehaviour
 
     private void StartDay()
     {
-        GameManager.Instance.LoadOffice();
+        if (GameManager.Instance.CurrentDay < 4)
+        {
+            GameManager.Instance.LoadOffice();
+        }
+        else
+        {
+            SceneManager.LoadScene("End");
+        }
     }
 }

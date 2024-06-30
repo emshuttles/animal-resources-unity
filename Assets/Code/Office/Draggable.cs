@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -47,6 +49,21 @@ public class Draggable : MonoBehaviour
             return;
         }
 
-        // TODO The rest of this
+        List<GameObject> trayObjects = GameObject.FindGameObjectsWithTag("Tray").ToList();
+        foreach (GameObject trayObject in trayObjects)
+        {
+            Collider2D trayCollider = trayObject.GetComponent<Collider2D>();
+            List<Collider2D> overlappingColliders = new();
+            trayCollider.OverlapCollider(new ContactFilter2D().NoFilter(), overlappingColliders);
+            foreach (Collider2D overlappingCollider in overlappingColliders)
+            {
+                if (overlappingCollider.gameObject == gameObject)
+                {
+                    transform.position = trayObject.transform.position;
+                    // To not block label
+                    transform.position += new Vector3(0, 1, 0);
+                }
+            }
+        }
     }
 }

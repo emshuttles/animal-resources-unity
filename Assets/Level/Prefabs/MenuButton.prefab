@@ -109,7 +109,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 50c64a7f9ea38c54bba4e996c2afd791, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 99f640892457b32409d4fb016df1ff68, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 70dc8ff7093ef19428574d98cf16d01a, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -200,15 +200,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31bfe1d41f614042bef3c2b6e82e977, type: 2}
-  m_sharedMaterial: {fileID: -6741072696454093171, guid: a31bfe1d41f614042bef3c2b6e82e977, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2005b383d14aaf4eb546d42ff2fc0cf, type: 2}
+  m_sharedMaterial: {fileID: -6741072696454093171, guid: b2005b383d14aaf4eb546d42ff2fc0cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292927712
-  m_fontColor: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

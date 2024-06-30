@@ -301,6 +301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f8283d6504191419b11daae3de3b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentDay: 0
+  CorrectAssignmentCount: 0
+  DesiredAssignmentCount: 0
+  WasPerfectDay: 1
 --- !u!4 &484712710
 Transform:
   m_ObjectHideFlags: 0
@@ -684,8 +688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.553, y: -414}
-  m_SizeDelta: {x: 1140.1064, y: 221.9057}
+  m_AnchoredPosition: {x: 30, y: -325}
+  m_SizeDelta: {x: 1860, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &848046858
 MonoBehaviour:
@@ -709,8 +713,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Animal Resources
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a89fe31e0f3ef074fb0133336a3da8c9, type: 2}
-  m_sharedMaterial: {fileID: 7079431074148551014, guid: a89fe31e0f3ef074fb0133336a3da8c9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 53ad9c9b493949b499a1768d3a46f9dd, type: 2}
+  m_sharedMaterial: {fileID: 7079431074148551014, guid: 53ad9c9b493949b499a1768d3a46f9dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -770,7 +774,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.000061035156, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

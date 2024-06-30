@@ -2,27 +2,22 @@ using UnityEngine;
 
 public class Persometer : MonoBehaviour
 {
-    [SerializeField]
-    private AudioClip _pickUpSound;
-    [SerializeField]
-    private AudioClip _putDownSound;
-
-    private AudioSource _audioSource;
+    private AudioSource _pickupSource;
+    private AudioSource _putdownSource;
 
     private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _pickupSource = transform.Find("SFX/Pickup").GetComponent<AudioSource>();
+        _putdownSource = transform.Find("SFX/Putdown").GetComponent<AudioSource>();
     }
 
     public void OnPickUp()
     {
-        _audioSource.clip = _pickUpSound;
-        _audioSource.Play();
+        _pickupSource.Play();
     }
 
     public void OnPutDown()
     {
-        _audioSource.clip = _putDownSound;
-        _audioSource.Play();
+        _putdownSource.Play();
     }
 }

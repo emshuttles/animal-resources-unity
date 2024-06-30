@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     private void EndDay()
     {
-        GameManager.Instance.EndDay();
+        GameManager.Instance.LoadNextDay();
     }
 
     private IEnumerator FadeToBlack()

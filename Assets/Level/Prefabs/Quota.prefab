@@ -1463,9 +1463,10 @@ GameObject:
   - component: {fileID: 6800186701045513548}
   - component: {fileID: 5401054522347134843}
   - component: {fileID: 9156689615132133187}
+  - component: {fileID: 7193235871353015385}
   m_Layer: 0
   m_Name: Quota
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1691,8 +1692,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e2d02c4729a2f4b92dabf08b2e8fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CandidateName: 
+  CorrectJob: 0
+  KindScore: 0
+  AnalyticalScore: 0
+  DesiredJob: 0
+  EngineerInterest: 0
+  ArtTherapistInterest: 0
+  ToyMakerInterest: 0
+  Portrait: {fileID: 0}
   _pickUpSound: {fileID: 8300000, guid: c37098cc9394dac4d8cdeb724250583a, type: 3}
   _putDownSound: {fileID: 8300000, guid: 7175cc15019fbbb4ea50ce3557490728, type: 3}
+  _filledCircle: {fileID: 0}
 --- !u!210 &9156689615132133187
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1705,6 +1716,21 @@ SortingGroup:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &7193235871353015385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977692826139326382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a56cf66b931cf44dbe4036a4c057328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EngineerQuota: 0
+  ArtTherapistQuota: 0
+  ToyMakerQuota: 0
 --- !u!1 &9049669195236346467
 GameObject:
   m_ObjectHideFlags: 0
