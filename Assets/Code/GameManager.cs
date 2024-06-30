@@ -67,8 +67,6 @@ public class GameManager : MonoBehaviour
             case 3:
                 SceneManager.LoadScene("Office3", LoadSceneMode.Additive);
                 break;
-            case 4:
-                throw new Exception("To be implemented.");
             default:
                 throw new Exception("Trying to load an invalid day.");
         }

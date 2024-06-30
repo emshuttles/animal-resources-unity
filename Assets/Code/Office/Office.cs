@@ -24,22 +24,22 @@ public class Office : MonoBehaviour
     private List<GameObject> _papers = new();
     private Button _endButton;
     private int _numOfFileablePapers;
-    private Quota _quota;
 
     private void Start()
     {
+        _endButton = FindObjectOfType<Button>();
+
+        SetEndButtonState(false);
+        PlayRandomSong();
+
+        CreateJobRequests();
         _trays = GameObject.FindGameObjectsWithTag("Tray").ToList();
         _papers = GameObject.FindGameObjectsWithTag("Paper").ToList();
-        _endButton = FindObjectOfType<Button>();
-        _quota = GameObject.Find("Quota").GetComponent<Quota>();
-
-        PlayRandomSong();
+        
         SubscribeToTrayUpdate();
+        
         CountFileablePapers();
-        CreateJobRequests();
         CreateReprimand();
-        // To set end button state
-        OnTrayUpdated();
     }
 
     public void EndDay()
@@ -50,7 +50,7 @@ public class Office : MonoBehaviour
 
     private DayResult GetDayResult()
     {
-        DayResult dayResult = new(_quota.EngineerQuota, _quota.ArtTherapistQuota, _quota.ToyMakerQuota);
+        DayResult dayResult = new();
         foreach (GameObject trayObject in _trays)
         {
             Tray tray = trayObject.GetComponent<Tray>();
@@ -132,9 +132,17 @@ public class Office : MonoBehaviour
         }
 
         bool areAllFiled = numOfFiledPapers == _numOfFileablePapers;
-        _endButton.interactable = areAllFiled;
-        TextMeshProUGUI text = _endButton.GetComponentInChildren<TextMeshProUGUI>();
-        text.alpha = areAllFiled ? 1f : 0.31f;
+        SetEndButtonState(areAllFiled);
+    }
+
+    private void SetEndButtonState(bool isInteractable)
+    {
+        if (_endButton != null)
+        {
+            _endButton.interactable = isInteractable;
+            TextMeshProUGUI text = _endButton.GetComponentInChildren<TextMeshProUGUI>();
+            text.alpha = isInteractable ? 1f : 0.31f;
+        }
     }
 
     private void CountFileablePapers()

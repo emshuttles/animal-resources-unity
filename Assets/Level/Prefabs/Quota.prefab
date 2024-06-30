@@ -1463,7 +1463,6 @@ GameObject:
   - component: {fileID: 6800186701045513548}
   - component: {fileID: 5401054522347134843}
   - component: {fileID: 9156689615132133187}
-  - component: {fileID: 7193235871353015385}
   m_Layer: 0
   m_Name: Quota
   m_TagString: Paper
@@ -1716,21 +1715,6 @@ SortingGroup:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &7193235871353015385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8977692826139326382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a56cf66b931cf44dbe4036a4c057328, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EngineerQuota: 0
-  ArtTherapistQuota: 0
-  ToyMakerQuota: 0
 --- !u!1 &9049669195236346467
 GameObject:
   m_ObjectHideFlags: 0

@@ -1225,6 +1225,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2928122683342733080}
     m_Modifications:
+    - target: {fileID: 1728556190874375993, guid: fc97804726a71044dbea59db5e81bc7a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616534560772121853, guid: fc97804726a71044dbea59db5e81bc7a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2622052747528887298, guid: fc97804726a71044dbea59db5e81bc7a, type: 3}
       propertyPath: m_Name
       value: Axis

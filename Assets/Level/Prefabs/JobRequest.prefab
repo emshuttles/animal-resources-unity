@@ -185,7 +185,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Dear Animal Resources worker,
 
-    
+
 
     I humbly request that you reconsider
     your decision. I understand that this may get you in trouble with the Imperial
@@ -1047,7 +1047,7 @@ GameObject:
   - component: {fileID: 8198163829674545213}
   m_Layer: 0
   m_Name: JobRequest
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
