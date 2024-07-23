@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Office : MonoBehaviour
@@ -46,6 +47,22 @@ public class Office : MonoBehaviour
     {
         DayResult dayResult = GetDayResult();
         GameManager.Instance.EndDay(dayResult);
+    }
+
+    public void ReorderPapers(GameObject topObject)
+    {
+        foreach (GameObject paperObject in _papers)
+        {
+            SortingGroup sortingGroup = paperObject.GetComponent<SortingGroup>();
+            if (paperObject == topObject)
+            {
+                sortingGroup.sortingOrder = _papers.Count;
+            }
+            else
+            {
+                sortingGroup.sortingOrder--;
+            }
+        }
     }
 
     private DayResult GetDayResult()

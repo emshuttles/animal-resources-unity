@@ -13,14 +13,13 @@ public class Draggable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && IsHoldingThisPaper())
+        if (Input.GetMouseButtonDown(0) && ClickedThisDraggable())
         {
             PickedUp.Invoke();
             Cursor.lockState = CursorLockMode.Confined;
             _isHeld = true;
             _clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            
-            // TODO Render grabbed paper on top
+            RenderOnTop();
         }
         else if (Input.GetMouseButtonUp(0) && _isHeld)
         {
@@ -35,11 +34,34 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    private bool IsHoldingThisPaper()
+    private bool ClickedThisDraggable()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (DidHitInteractable(mousePosition))
+        {
+            return false;
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
         return hit.collider != null && hit.collider.gameObject == gameObject;
+    }
+
+    private bool DidHitInteractable(Vector2 mousePosition)
+    {
+        LayerMask mask = LayerMask.GetMask("Interactable");
+        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, mask);
+        return hit.collider != null;
+    }
+
+    private void RenderOnTop()
+    {
+        if (GetComponent<Persometer>() != null)
+        {
+            return;
+        }
+
+        Office office = FindObjectOfType<Office>();
+        office.ReorderPapers(gameObject);
     }
 
     private void SnapToTray()
@@ -61,7 +83,7 @@ public class Draggable : MonoBehaviour
                 {
                     transform.position = trayObject.transform.position;
                     // To not block label
-                    transform.position += new Vector3(0, 1, 0);
+                    transform.position += new Vector3(0f, 1f, 0f);
                 }
             }
         }

@@ -567,6 +567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1503535890}
+  _fadingImageAnimator: {fileID: 268452061}
+  _musicAnimator: {fileID: 145582050}
 --- !u!4 &1327180301
 Transform:
   m_ObjectHideFlags: 0

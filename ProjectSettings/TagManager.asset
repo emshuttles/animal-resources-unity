@@ -13,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
   - name: Tray
     uniqueID: 2066425353
     locked: 0
-  - name: Draggable
+  - name: Paper
     uniqueID: 1161931097
+    locked: 0
+  - name: Persometer
+    uniqueID: 1307515169
     locked: 0
