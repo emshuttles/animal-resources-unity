@@ -9,7 +9,6 @@ public class CameraController : MonoBehaviour
     private static readonly float _windowWidth = 19.20f;
     private static readonly float _windowHeight = 10.80f;
     private static readonly float _keyPanSpeed = 20f;
-    private static readonly float _mousePanSpeed = 1f;
     private static readonly float _cameraZPosition = -10f;
     private static readonly float _zoomedInSize = 5f;
     private static readonly float _zoomedOutSize = 15f;
@@ -17,7 +16,7 @@ public class CameraController : MonoBehaviour
 
     private Camera _camera;
     private Coroutine _zoomCoroutine;
-    private bool _isPanningWithMouse = false;
+    private bool _isPanningWithMouse;
     private Vector3 _panOrigin = Vector3.zero;
 
     private void Awake()
@@ -36,7 +35,7 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            _panOrigin = Input.mousePosition;
+            _panOrigin = _camera.ScreenToWorldPoint(Input.mousePosition);
             _isPanningWithMouse = true;
         }
         else if (Input.GetMouseButtonUp(1))
@@ -46,13 +45,12 @@ public class CameraController : MonoBehaviour
 
         if (_isPanningWithMouse)
         {
-            float zoomOutLevel = _camera.orthographicSize / _zoomedInSize;
-            Vector3 difference = _panOrigin - Input.mousePosition;
-            float newXPosition = transform.position.x + difference.x * zoomOutLevel * _mousePanSpeed * Time.deltaTime;
-            float newYPosition = transform.position.y + difference.y * zoomOutLevel * _mousePanSpeed * Time.deltaTime;
-            Vector3 move = KeepPositionInBounds(newXPosition, newYPosition, _camera.orthographicSize);
-            transform.position = move;
-            _panOrigin = Input.mousePosition;
+            Vector3 difference = _panOrigin - _camera.ScreenToWorldPoint(Input.mousePosition);
+            float newXPosition = transform.position.x + difference.x;
+            float newYPosition = transform.position.y + difference.y;
+            Vector3 newPosition = KeepPositionInBounds(newXPosition, newYPosition, _camera.orthographicSize);
+            transform.position = newPosition;
+            _panOrigin = _camera.ScreenToWorldPoint(Input.mousePosition);
         }
     }
 

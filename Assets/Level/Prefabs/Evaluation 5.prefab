@@ -448,7 +448,7 @@ MonoBehaviour:
   PickedUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9032397957148705079}
         m_TargetAssemblyTypeName: Paper, Assembly-CSharp
         m_MethodName: OnPickUp
         m_Mode: 1
@@ -463,7 +463,7 @@ MonoBehaviour:
   PutDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9032397957148705079}
         m_TargetAssemblyTypeName: Paper, Assembly-CSharp
         m_MethodName: OnPutDown
         m_Mode: 1
@@ -525,6 +525,10 @@ PrefabInstance:
         Empire are delightful. These include the Sight Capturer, the Quadricycle,
         the Claw Clipper, the Pizza Cutter and, of course, the Persometer.
       objectReference: {fileID: 0}
+    - target: {fileID: 475534013021750386, guid: cc2c4a3ee679e064e8336fcf3f1faf8a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d493d3f4f95d08e4fb699213017ef7da, type: 3}
     - target: {fileID: 834357668296561413, guid: cc2c4a3ee679e064e8336fcf3f1faf8a, type: 3}
       propertyPath: m_LocalPosition.y
       value: -12.389

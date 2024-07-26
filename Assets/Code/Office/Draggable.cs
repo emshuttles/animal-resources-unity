@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Draggable : MonoBehaviour
 {
@@ -42,8 +43,27 @@ public class Draggable : MonoBehaviour
             return false;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-        return hit.collider != null && hit.collider.gameObject == gameObject;
+        List<RaycastHit2D> hits = new();
+        Physics2D.Raycast(mousePosition, Vector2.zero, new ContactFilter2D().NoFilter(), hits);
+        GameObject highestObject = GetHighestObject(hits);
+        return highestObject == gameObject;
+    }
+
+    private GameObject GetHighestObject(List<RaycastHit2D> hits)
+    {
+        GameObject highestObject = null;
+        float highestSoFar = Mathf.NegativeInfinity;
+        foreach (RaycastHit2D hit in hits)
+        {
+            SortingGroup sortingGroup = hit.collider.GetComponent<SortingGroup>();
+            if (sortingGroup.sortingOrder > highestSoFar)
+            {
+                highestSoFar = sortingGroup.sortingOrder;
+                highestObject = hit.collider.gameObject;
+            }
+        }
+
+        return highestObject;
     }
 
     private bool DidHitInteractable(Vector2 mousePosition)

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Evaluation : Paper
 {
     private static readonly string _namePath = "Evaluation/Name/Name 2";
-    private static readonly string _kindPath = "Evaluation/Kind Statement";
     private static readonly string _analyticalPath = "Evaluation/Analytical Statement";
     private static readonly string _engineerPath = "Evaluation/Engineer Statement";
     private static readonly string _artTherapistPath = "Evaluation/Art Therapist Statement";
@@ -34,8 +33,8 @@ public class Evaluation : Paper
 
     private void FillCircles()
     {
-        string kindCirclePath = _kindPath + _circlePaths[KindScore];
-        FillCircle(kindCirclePath);
+        // Not filling kindness circles because sometimes the question is asked in inverse.
+        // i.e., a low score means higher kindness
         string analyticalCirclePath = _analyticalPath + _circlePaths[AnalyticalScore];
         FillCircle(analyticalCirclePath);
         string engineerCirclePath = _engineerPath + _circlePaths[EngineerInterest];

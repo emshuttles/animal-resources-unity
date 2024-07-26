@@ -196,7 +196,7 @@ MonoBehaviour:
   PickedUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7547785492450331069}
         m_TargetAssemblyTypeName: Paper, Assembly-CSharp
         m_MethodName: OnPickUp
         m_Mode: 1
@@ -211,7 +211,7 @@ MonoBehaviour:
   PutDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7547785492450331069}
         m_TargetAssemblyTypeName: Paper, Assembly-CSharp
         m_MethodName: OnPutDown
         m_Mode: 1
@@ -519,6 +519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3362415903250162085}
     m_Modifications:
+    - target: {fileID: 475534013021750386, guid: cc2c4a3ee679e064e8336fcf3f1faf8a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d493d3f4f95d08e4fb699213017ef7da, type: 3}
     - target: {fileID: 1412567633447193267, guid: cc2c4a3ee679e064e8336fcf3f1faf8a, type: 3}
       propertyPath: m_LocalPosition.y
       value: -9.405
